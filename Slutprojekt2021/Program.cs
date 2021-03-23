@@ -7,6 +7,7 @@ namespace Slutprojekt2021
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.ReadLine();
         }
     }
 }
