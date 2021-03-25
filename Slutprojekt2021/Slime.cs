@@ -12,6 +12,8 @@ namespace Slutprojekt2021
 
         protected int expRequired;
         protected bool isAlive;
+        protected bool isShiny;
+        protected Random generator = new Random();
 
         public void addExp(int expAmount){
             exp = exp + expAmount;
@@ -38,6 +40,10 @@ namespace Slutprojekt2021
             if(hp == 0){
                 isAlive = false;
             }
+        }
+
+        public int dealDamage(){
+            return damage;
         }
 
     }
