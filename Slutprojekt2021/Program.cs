@@ -6,9 +6,27 @@ namespace Slutprojekt2021
     {
         static void Main(string[] args)
         {
+            bool loopDone = false;
+            int okInput;
+
             GameInterface ui = new GameInterface();
 
-            ui.IntroText();
+            while(loopDone == false){
+                ui.IntroText();
+                string input = ui.GetUserInput();
+                int inputInt = ui.ConvertInputToInt(input);
+                okInput = 1;
+                loopDone = ui.okInput(inputInt, okInput);
+
+                Console.Clear();
+            }
+
+            System.Console.WriteLine("You did it!");
+            Console.ReadLine();
+
         }
+
+
+
     }
 }
