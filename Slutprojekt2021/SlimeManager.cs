@@ -10,5 +10,12 @@ namespace Slutprojekt2021
         public void addSlimeToList(Slime slimeToAdd){
             slimeList.Add(slimeToAdd);
         }
+
+        public void removeSlimeFromList(int slimeIndex){
+            slimeList.RemoveAt(slimeIndex);
+        }
+
+        
+
     }
 }
