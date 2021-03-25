@@ -15,6 +15,22 @@ namespace Slutprojekt2021
             slimeList.RemoveAt(slimeIndex);
         }
 
+        public void createNewSlime(){
+            Random generator = new Random();
+
+            int randomizeSlime = generator.Next(1,3);
+
+            if(randomizeSlime == 1){
+                ShadowSlime PlayerSlime = new ShadowSlime();
+                slimeList.Add(PlayerSlime);
+            }
+
+            else{
+                WaterSlime PlayerSlime = new WaterSlime();
+                slimeList.Add(PlayerSlime);
+            }
+        }
+
         
 
     }

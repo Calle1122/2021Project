@@ -5,6 +5,8 @@ namespace Slutprojekt2021
     public class WaterSlime : Slime
     {
         public WaterSlime(){
+            type = "Water";
+
             damage = generator.Next(40, 76);
             hp = generator.Next(35, 71);
             defense = generator.Next(20, 56);

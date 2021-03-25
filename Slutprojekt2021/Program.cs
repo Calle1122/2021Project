@@ -32,7 +32,11 @@ namespace Slutprojekt2021
                 Console.Clear();
             }
 
-            System.Console.WriteLine("You did it!");
+            SlimeManager slimeManager = new SlimeManager();
+
+            slimeManager.createNewSlime();
+
+            slimeManager.slimeList[0].drawPlayerStats(slimeManager.slimeList[0]);
             Console.ReadLine();
 
         }

@@ -5,6 +5,8 @@ namespace Slutprojekt2021
     public class ShadowSlime : Slime
     {
         public ShadowSlime(){
+            type = "Shadow";
+
             damage = generator.Next(65, 101);
             hp = generator.Next(25, 61);
             defense = generator.Next(15, 51);

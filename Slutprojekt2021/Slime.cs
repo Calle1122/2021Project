@@ -9,6 +9,7 @@ namespace Slutprojekt2021
         public int level;
         public int damage;
         public int defense;
+        public string type;
 
         protected int expRequired;
         protected bool isAlive;
@@ -44,6 +45,21 @@ namespace Slutprojekt2021
 
         public int dealDamage(){
             return damage;
+        }
+
+        public void drawPlayerStats(Slime playerSlime){
+            System.Console.WriteLine("Type: " + playerSlime.type);
+            
+            if(playerSlime.isShiny == true){
+                System.Console.WriteLine("*Shiny*");
+            }
+
+            System.Console.WriteLine("\nLevel: " + playerSlime.level);
+            System.Console.WriteLine("Experience: " + playerSlime.exp + "/" + playerSlime.expRequired);
+
+            System.Console.WriteLine("\nHealth: " + playerSlime.hp);
+            System.Console.WriteLine("Defense: " + playerSlime.defense);
+            System.Console.WriteLine("Damage: " + playerSlime.damage);
         }
 
     }
