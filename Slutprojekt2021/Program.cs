@@ -6,8 +6,9 @@ namespace Slutprojekt2021
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.ReadLine();
+            GameInterface ui = new GameInterface();
+
+            ui.IntroText();
         }
     }
 }
