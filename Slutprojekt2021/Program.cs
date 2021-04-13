@@ -32,26 +32,48 @@ namespace Slutprojekt2021
                 Console.Clear();
             }
 
-            bool gameLoopDone = false;
+            bool slimeLoopDone = false;
             int activeSlime = 0;
             SlimeManager slimeManager = new SlimeManager();
             slimeManager.createNewSlime();
 
-            while(gameLoopDone == false){
+            while(slimeLoopDone == false){
+                //Innan man valt namn:
                 slimeManager.slimeList[activeSlime].drawPlayerStats(slimeManager.slimeList[0]);
+                slimeManager.setSlimeName(slimeManager.slimeList[activeSlime]);
+
+                Console.Clear();
+
+                //Efter man valt namn:
+                Console.WriteLine("Name: " + slimeManager.slimeList[activeSlime].name);
+                slimeManager.slimeList[activeSlime].drawPlayerStats(slimeManager.slimeList[0]);
+
+                Console.WriteLine("\nPress ENTER to continue");
+
                 Console.ReadLine();
-                
+                Console.Clear();
+
+                slimeLoopDone = true;
+            }
+
+            Console.WriteLine("NICE");
+            Console.ReadLine();
+
+            
+
+
+
+
+
+
+
                 //Den utkommenterade koden nedan kan användas för att byta ut sin slime mot en ny. Vet inte ifall jag kommer använda detta
                 /*slimeManager.createNewSlime();
                 slimeManager.removeSlimeFromList(activeSlime);
                 Console.Clear();*/
-            }
-
-            
-
-            
-
         }
+
+
 
 
 

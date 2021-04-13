@@ -10,6 +10,7 @@ namespace Slutprojekt2021
         public int damage;
         public int defense;
         public string type;
+        public string name;
 
         protected int expRequired;
         protected bool isAlive;
