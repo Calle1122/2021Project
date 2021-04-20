@@ -56,6 +56,12 @@ namespace Slutprojekt2021
                 slimeLoopDone = true;
             }
 
+
+
+            //SPELET STARTAR!!!!!!
+
+            
+
             Console.WriteLine("NICE");
             Console.ReadLine();
 
