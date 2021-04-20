@@ -15,6 +15,9 @@ namespace Slutprojekt2021
             //Skapar en instans av klassen GameInterface som tar hand om input, typkonvertering och allt som spelaren ser på skärmen
             GameInterface ui = new GameInterface();
 
+            //Skapar en instans av klassen GameManager som tar hand om självaste Gameplay sakerna
+            GameManager slimeGame = new GameManager();
+
             //Denna loop körs tills spelaren angett motsvarande okInput
             while(loopDone == false){
                 //I loopen körs (GameInterface) ui metoderna:
@@ -60,9 +63,9 @@ namespace Slutprojekt2021
 
             //SPELET STARTAR!!!!!!
 
-            
 
-            Console.WriteLine("NICE");
+            slimeGame.drawStatsBox(slimeManager.slimeList[activeSlime].hp, slimeManager.slimeList[activeSlime].level);
+
             Console.ReadLine();
 
             

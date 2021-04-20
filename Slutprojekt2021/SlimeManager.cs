@@ -32,8 +32,24 @@ namespace Slutprojekt2021
         }
 
         public void setSlimeName(Slime playerSlime){
+            bool okName = false;
+            string slimeName = "";
+
             Console.WriteLine("\nPlease choose a name for your slime:");
-            string slimeName = Console.ReadLine();
+            
+
+            while(okName == false){
+                slimeName = Console.ReadLine();
+                slimeName.Trim();
+
+                if(slimeName == ""){
+                    Console.WriteLine("Please choose a name!");
+                }
+
+                else{
+                    okName = true;
+                }
+            }
 
             playerSlime.name = slimeName;
         }
