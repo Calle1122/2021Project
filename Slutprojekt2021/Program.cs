@@ -63,10 +63,33 @@ namespace Slutprojekt2021
 
             //SPELET STARTAR!!!!!!
 
+            string[] levelArray = new string[10];
+            int[] levelObjectArray = new int[10];;
 
-            slimeGame.drawStatsBox(slimeManager.slimeList[activeSlime].hp, slimeManager.slimeList[activeSlime].level);
+            int stage = 1;
+            int markerPos = 0;
 
-            Console.ReadLine();
+            bool gameIsFinished = false;
+
+            while(gameIsFinished == false){
+                slimeGame.createLevelMap(ref levelArray, ref levelObjectArray);
+
+                bool stageIsDone = false;
+
+                while(stageIsDone == false){
+                    slimeGame.drawStatsBox(slimeManager.slimeList[activeSlime].hp, slimeManager.slimeList[activeSlime].level);
+                    slimeGame.drawLevelMap(levelArray, markerPos);
+
+                    Console.ReadLine();
+
+                    markerPos = markerPos + 2;
+
+                    Console.Clear();
+                }
+                
+            }
+
+            
 
             
 
