@@ -67,11 +67,13 @@ namespace Slutprojekt2021
             int[] levelObjectArray = new int[10];;
 
             int stage = 1;
-            int markerPos = 0;
+            int markerPos;
 
             bool gameIsFinished = false;
 
             while(gameIsFinished == false){
+                markerPos = 0;
+
                 slimeGame.createLevelMap(ref levelArray, ref levelObjectArray);
 
                 bool stageIsDone = false;
@@ -85,6 +87,10 @@ namespace Slutprojekt2021
                     markerPos = markerPos + 2;
 
                     Console.Clear();
+
+                    if(markerPos > 18){
+                        stageIsDone = true;
+                    }
                 }
                 
             }
