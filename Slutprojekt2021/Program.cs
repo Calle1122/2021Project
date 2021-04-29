@@ -132,23 +132,29 @@ namespace Slutprojekt2021
                         stageIsDone = true;
                         stage++;
                     }
+
+                    if(slimeManager.slimeList[activeSlime].hp < 1){
+                    gameIsFinished = true;
+                    stageIsDone = true;
+                }
                 }
 
-                int healing = generator.Next(16,36);
+                if(gameIsFinished == false){
+                    int healing = generator.Next(13,31);
 
-                Console.WriteLine("You finished stage: " + stage);
-                Console.WriteLine("Your slime heals: +" + healing + " HP.");
+                    Console.WriteLine("You finished stage: " + stage);
+                    Console.WriteLine("Your slime heals: +" + healing + " HP.");
 
-                slimeManager.slimeList[activeSlime].hp += healing;
+                    slimeManager.slimeList[activeSlime].hp += healing;
 
-                Console.ReadLine();
-                Console.Clear();
-
-
+                    Console.ReadLine();
+                    Console.Clear();
+                }
                 
             }
 
-            
+            Console.WriteLine("You died!");
+            Console.ReadLine();
 
             
 
