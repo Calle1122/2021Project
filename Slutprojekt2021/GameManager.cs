@@ -11,7 +11,18 @@ namespace Slutprojekt2021
             Console.WriteLine("╠═════════════════════════╣");
             Console.WriteLine("║ LEVEL: " + level + "                ║");
             Console.WriteLine("║                         ║");
-            Console.WriteLine("║ HP: " + hp + "                  ║");
+
+            if(hp < 10){
+                Console.WriteLine("║ HP: " + hp + "                   ║");
+            }
+
+            else if(hp > 9 && hp < 100){
+                Console.WriteLine("║ HP: " + hp + "                  ║");
+            }
+
+            else{
+                Console.WriteLine("║ HP: " + hp + "                 ║");
+            }
 
             if(stage < 10){
                 Console.WriteLine("║                         ║");
