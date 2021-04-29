@@ -12,6 +12,8 @@ namespace Slutprojekt2021
             //Skapar en variabel som anger vad som är okInput (int)
             int okInput;
 
+            Random generator = new Random();
+
             //Skapar en instans av klassen GameInterface som tar hand om input, typkonvertering och allt som spelaren ser på skärmen
             GameInterface ui = new GameInterface();
 
@@ -82,7 +84,45 @@ namespace Slutprojekt2021
                     slimeGame.drawStatsBox(slimeManager.slimeList[activeSlime].hp, slimeManager.slimeList[activeSlime].level, stage);
                     slimeGame.drawLevelMap(levelArray, markerPos);
 
-                    Console.ReadLine();
+                    Console.WriteLine("Object ID: " + levelObjectArray[markerPos/2]);
+
+                    bool areaDone = false;
+
+                    while (areaDone == false){
+                        if(levelObjectArray[markerPos/2] == 1){
+                            Console.WriteLine("There is nothing here...");
+                            Console.WriteLine("Press ENTER to continue");
+
+                            Console.ReadLine();
+
+                            areaDone = true;
+                        }
+
+                        else if(levelObjectArray[markerPos/2] == 2){
+                            Console.WriteLine("An enemy has appeared!");
+                            
+                            int damage = generator.Next(5,11);
+
+                            Console.WriteLine("The enemy deals " + damage + " damage.");
+
+                            slimeManager.slimeList[activeSlime].hp -= damage;
+
+                            Console.WriteLine("\nPress ENTER to continue");
+
+                            Console.ReadLine();
+
+                            areaDone = true;
+                        }
+
+                        else{
+                            Console.WriteLine("You found a chest containing: Large Potion");
+                            Console.WriteLine("Press ENTER to continue");
+
+                            Console.ReadLine();
+
+                            areaDone = true;
+                        }
+                    }
 
                     markerPos = markerPos + 2;
 
@@ -93,6 +133,18 @@ namespace Slutprojekt2021
                         stage++;
                     }
                 }
+
+                int healing = generator.Next(16,36);
+
+                Console.WriteLine("You finished stage: " + stage);
+                Console.WriteLine("Your slime heals: +" + healing + " HP.");
+
+                slimeManager.slimeList[activeSlime].hp += healing;
+
+                Console.ReadLine();
+                Console.Clear();
+
+
                 
             }
 
