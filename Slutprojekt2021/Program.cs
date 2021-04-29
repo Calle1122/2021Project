@@ -79,7 +79,7 @@ namespace Slutprojekt2021
                 bool stageIsDone = false;
 
                 while(stageIsDone == false){
-                    slimeGame.drawStatsBox(slimeManager.slimeList[activeSlime].hp, slimeManager.slimeList[activeSlime].level);
+                    slimeGame.drawStatsBox(slimeManager.slimeList[activeSlime].hp, slimeManager.slimeList[activeSlime].level, stage);
                     slimeGame.drawLevelMap(levelArray, markerPos);
 
                     Console.ReadLine();
@@ -90,6 +90,7 @@ namespace Slutprojekt2021
 
                     if(markerPos > 18){
                         stageIsDone = true;
+                        stage++;
                     }
                 }
                 

@@ -5,16 +5,27 @@ namespace Slutprojekt2021
 {
     public class GameManager
     {
-        public void drawStatsBox(int hp, int level){
+        public void drawStatsBox(int hp, int level, int stage){
             Console.WriteLine("╔═════════════════════════╗");
             Console.WriteLine("║          STATS          ║");
             Console.WriteLine("╠═════════════════════════╣");
             Console.WriteLine("║ LEVEL: " + level + "                ║");
             Console.WriteLine("║                         ║");
             Console.WriteLine("║ HP: " + hp + "                  ║");
-            Console.WriteLine("║                         ║");
-            Console.WriteLine("║                         ║");
-            Console.WriteLine("╚═════════════════════════╝");
+
+            if(stage < 10){
+                Console.WriteLine("║                         ║");
+                Console.WriteLine("║ STAGE: " + stage + "                ║");
+                Console.WriteLine("╚═════════════════════════╝");
+            }
+
+            else{
+                Console.WriteLine("║                         ║");
+                Console.WriteLine("║ STAGE: " + stage + "               ║");
+                Console.WriteLine("╚═════════════════════════╝");
+            }
+
+            
         }
 
         public string[] createLevelMap(ref string[] levelArray, ref int[] levelObjectArray){
